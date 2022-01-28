@@ -18,8 +18,7 @@ class HomeController extends Controller
 
     public function comic($id)
     {
-        dd($id);
-
-        return view('pages.comic');
+        $comic = Comic::findOrFail($id);
+        return view('pages.comic', compact('comic'));
     }
 }
